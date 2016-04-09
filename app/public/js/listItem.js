@@ -11,12 +11,19 @@ $.getJSON("public/json/rehab.json")
 								  .append("<td>"+val['tel']+"</td>")
 								  .attr('id', 'center' + val['id'])
 								  .appendTo("#contact");
-		/* add marker to the map 
+		/* add marker to the map  */
+
+		var popup = L.popup()
+								 .setContent("<p>"+ val['name']   +"</p>" 
+								 					 + "<p>"+ val['address']+ "</p>"
+								 					 + "<p>"+ val['tel'] 		+ "</p>")
+
 
 		L.marker(val['coordinate'], {
 			title: val['name']
-		});
-*/
+		})
+		.bindPopup(popup)
+		.addTo(mymap);
 
 	});
 
