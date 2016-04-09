@@ -1,7 +1,7 @@
 {
   "name": "psych-health-map",
   "version": "1.0.0",
-  "description": "a short piece of code fiddling with D3.js",
+  "description": "show psychiatric rehabilitation centers in Kaohsiung in a map",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
