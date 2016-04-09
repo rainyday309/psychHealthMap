@@ -8,7 +8,8 @@
     "start": "node server.js"
   },
   "keywords": [
-    "D3.js"
+    "psychiatric",
+    "open street map"
   ],
   "author": "Wei-Cheng Yang",
   "license": "MIT",
