@@ -1,0 +1,19 @@
+{
+  "name": "psych-health-map",
+  "version": "1.0.0",
+  "description": "a short piece of code fiddling with D3.js",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "D3.js"
+  ],
+  "author": "Wei-Cheng Yang",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.13.4"
+  },
+  "devDependencies": {}
+}
