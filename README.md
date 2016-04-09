@@ -12,14 +12,16 @@ json是我手動key的，希望他們有一天能夠釋出csv或是json以便自
 頁面已經deploy到[http://ks-psych-rehab-map.herokuapp.com/](http://ks-psych-rehab-map.herokuapp.com/)
 因為利用jQuery載入json的關係，不允許https連線，敬請見諒，如果有一天我功力進步可以減低安全性問題會馬上修正。
 如果您想要在本機上跑看看，
-{% highlight bash%}
+
+```bash
 git clone git@github.com:rainyday309/psychHealthMap.git
-{% endhighlight %}
+```
 
 拷貝完以後在目錄下跑
-{% hightlight bash%}
+
+```bash
 ./bin/www
-{% endhighlight%}
+```
 
 打開localhost:3000就可以了
 
