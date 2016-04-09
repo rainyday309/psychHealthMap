@@ -4,13 +4,6 @@ $.getJSON("public/json/rehab.json")
 	/* handle each object by appending into table */
 	$.each(data, function(key,val){
 
-		/* add center data to the table */
-		$("<tr></tr>").append("<td>"+val['id']+"</td>")
-									.append("<td>"+val['name']+"</td>")
-								  .append("<td>"+val['address']+"</td>")
-								  .append("<td>"+val['tel']+"</td>")
-								  .attr('id', 'center' + val['id'])
-								  .appendTo("#contact");
 		/* add marker to the map  */
 
 		var popup = L.popup()
@@ -19,15 +12,47 @@ $.getJSON("public/json/rehab.json")
 								 					 + "<p>"+ val['tel'] 		+ "</p>")
 
 
-		L.marker(val['coordinate'], {
+		var mk=L.marker(val['coordinate'], {
 			title: val['name']
 		})
 		.bindPopup(popup)
 		.addTo(mymap);
 
-	});
+		mk._icon.id = "icon" + val['id'];
+
+		/* add center data to the table */
+		$("<tr></tr>").append("<td>"+val['id']+"</td>")
+									.append("<td>"+val['name']+"</td>")
+								  .append("<td>"+val['address']+"</td>")
+								  .append("<td>"+val['tel']+"</td>")
+								  .attr('id', 'center' + val['id'])
+								  /* set listeners to focus to map icons*/
+								  .on("click",function(){
+								  	mymap.setView(mk._latlng, 17);
+								  	mk.openPopup();
+								  	$('#mapid').focus();
+								  })
+								  .appendTo("#contact");
+
+
+
+	}); /* end each */
 
 })
 .fail(function(){
 	$('.list').append('<p>Failed to retrieve data from server!</p>');
 })
+
+/* set listeners for zooming and out to location */
+
+/* zoom in to location when popup clicked */
+mymap.on('popupopen', function(centerMarker){
+	mymap.setView(centerMarker.popup._latlng, 17);
+});
+
+$('.reset').on("click", function(){
+	mymap.closePopup()
+			 .setView([22.62595,120.32554],12);
+});
+
+$('#center')
