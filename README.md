@@ -20,6 +20,8 @@ git clone git@github.com:rainyday309/psychHealthMap.git
 拷貝完以後在目錄下跑
 
 ```bash
+npm install
+
 ./bin/www
 ```
 
