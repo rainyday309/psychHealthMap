@@ -28,7 +28,7 @@ $.getJSON("public/json/rehab.json")
 								  .attr('id', 'center' + val['id'])
 								  /* set listeners to focus to map icons*/
 								  .on("click",function(){
-								  	mymap.setView(mk._latlng, 17);
+								  	mymap.setView(mk._latlng, 16);
 								  	mk.openPopup();
 								  	$('#mapid').focus();
 								  })
@@ -47,7 +47,7 @@ $.getJSON("public/json/rehab.json")
 
 /* zoom in to location when popup clicked */
 mymap.on('popupopen', function(centerMarker){
-	mymap.setView(centerMarker.popup._latlng, 17);
+	mymap.setView(centerMarker.popup._latlng, 16);
 });
 
 $('.reset').on("click", function(){
